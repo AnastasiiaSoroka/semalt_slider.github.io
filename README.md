@@ -1,1 +1,1 @@
-# semalt_slider.github.io
+# slider.github.io
