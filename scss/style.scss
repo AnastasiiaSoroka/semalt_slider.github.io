@@ -1,0 +1,133 @@
+/*Color variables*/
+$main_color: #17b2b0;
+$main_gradient_1: #30c4bb;
+$main_gradient_2: #27bdb6;
+
+body{
+	background: $main_color;
+	background: radial-gradient($main_gradient_1, $main_gradient_2);
+}
+
+/* Flex container*/
+.container{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    align-content: center; 
+    justify-content: space-between; 
+
+}
+/*Buttom navigation slider*/	
+.controls button{ 
+	font-family: Charcoal, sans-serif;
+	font-size: 24px;
+	width: 150px;
+	height: 60px;
+	background: $main_gradient_2;
+	border: 2px #fff solid;
+	border-radius: 10px;
+	margin: 20px;
+	color:#fff; 
+
+	&:hover{
+		background: #fff;
+		color: $main_color;
+	}
+
+}
+/*Carousel slider*/
+.wrap{
+	width: 1000px;
+ 	margin: 0 auto;
+ 	overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  left: -100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(100%);
+}
+
+@media (min-width: 30em) {
+  .carousel {
+    left: -50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (min-width: 40em) {
+  .carousel {
+    left: -33.33333%;
+    transform: translateX(33.33333%);
+  }
+}
+
+.carousel.is-reversing {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 30em) {
+  .carousel.is-reversing {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 40em) {
+  .carousel.is-reversing {
+    transform: translateX(-33.33333%);
+  }
+}
+
+.carousel.is-set {
+  transform: none;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-seat {
+  background: $main_gradient_2;
+  flex: 1 0 100%;
+  order: 2;
+  border: 2px #fff solid;
+  border-radius:50%;
+  box-sizing: border-box;
+  align-content: center;
+
+  img{
+  	width: 300px;
+  	height: 300px;
+  	margin: 0 auto;
+  	border-radius: 50px;
+
+  }
+  img:hover{
+  	transform: scale(1.4);
+  }
+}
+
+@media (min-width: 30em) {
+  .carousel-seat {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 40em) {
+  .carousel-seat {
+    flex-basis: 33.33333%;
+  }
+
+}
+
+.carousel-seat.is-ref {
+  order: 1;
+  border: 4px #fff solid;
+}
+
+
+
